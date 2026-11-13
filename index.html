@@ -128,6 +128,26 @@
         font-family: "Anton", sans-serif; text-transform: uppercase; letter-spacing: .06em;
         text-align: center; padding: 10px 16px; font-size: clamp(.95rem, 2.6vw, 1.2rem);
       }
+      .stats-strip {
+        position: relative; background: #000; color: var(--paper);
+        border-top: 1px solid var(--line);
+      }
+      .stats-strip .stats-inner {
+        display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+        column-gap: 14px; row-gap: 4px; padding-top: 12px; padding-bottom: 12px;
+        text-align: center;
+      }
+      .stats-strip .stat { display: inline-flex; align-items: baseline; gap: 6px; white-space: nowrap; }
+      .stats-strip .stat-num { font-family: "Anton", sans-serif; font-size: 1.15rem; letter-spacing: .03em; color: var(--paper); line-height: 1; }
+      .stats-strip .stat-num.gold { color: var(--gold); }
+      .stats-strip .stat-label { font-size: .78rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+      .stats-strip .stat-sep { color: var(--gold); font-weight: 800; line-height: 1; }
+      .stats-strip .stats-source { flex-basis: 100%; font-size: .68rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); margin-top: 2px; }
+      @media (max-width: 560px) {
+        .stats-strip .stats-inner { column-gap: 10px; }
+        .stats-strip .stat { padding: 2px 0; }
+        .stats-strip .stat-num { font-size: 1.05rem; }
+      }
 
       /* ---------- generic blocks ---------- */
       .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: start; }
@@ -317,6 +337,20 @@
         </div>
       </div>
       <div class="ping-strip">Class is in session — don't be late!!!</div>
+      <div class="stats-strip" aria-label="Xbox Playback — 7,660 hours, Top 2.3%, 362 games, COD 1,503 hours, Since 2012">
+        <div class="wrap stats-inner">
+          <span class="stat"><span class="stat-num">7,660</span><span class="stat-label">hours</span></span>
+          <span class="stat-sep" aria-hidden="true">·</span>
+          <span class="stat"><span class="stat-label">Top</span><span class="stat-num gold">2.3%</span></span>
+          <span class="stat-sep" aria-hidden="true">·</span>
+          <span class="stat"><span class="stat-num">362</span><span class="stat-label">games</span></span>
+          <span class="stat-sep" aria-hidden="true">·</span>
+          <span class="stat"><span class="stat-label">COD</span><span class="stat-num">1,503h</span></span>
+          <span class="stat-sep" aria-hidden="true">·</span>
+          <span class="stat"><span class="stat-label">Since</span><span class="stat-num gold">2012</span></span>
+          <span class="stats-source">Xbox Playback · Legendary</span>
+        </div>
+      </div>
     </header>
 
     <main>
